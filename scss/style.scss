@@ -1,0 +1,131 @@
+*{
+  //border: white dotted 1px;
+}
+@import url('https://fonts.googleapis.com/css?family=Raleway:300');
+html {
+  font-size:10px;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+}
+// VARIABLES //
+$dark-grey: rgb(8,8,8);
+$dark-blue: rgb(0, 0, 25);
+$green: rgb(45, 242, 31);
+$red: rgb(255, 0, 0);
+
+body {
+  background: $dark-grey; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, $dark-blue, $dark-grey); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, $dark-blue, $dark-grey); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, $dark-blue,$dark-grey); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right,$dark-blue,$dark-grey); /* Standard syntax */
+  min-height: 100vh;
+  min-width:30rem;
+  margin:0px;
+}
+#contain {
+  width: 30rem;
+  margin:auto;
+  padding-top: 1.3rem;
+  & #title {
+    margin: 3.5rem 0px;
+    font-size: 3.5rem;
+    font-weight: 100;
+    text-align:center;
+    letter-spacing: 1px;
+  }
+  
+  & #clock {
+    height: 20rem;
+    width: 20rem;
+    margin: 7.3rem auto;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    border-radius: 100%;
+    border: 2px solid white;
+    color:white;
+    &:hover{
+      cursor: pointer;
+    }
+    & #timer{
+      text-align:center;
+      font-size: 4rem;
+      font-weight: 100;
+    }//timer
+    & #pausePlay {
+      font-size: 5rem;
+      width:20rem;
+      height:20rem;
+      border-radius:100%;
+      display:none;
+      justify-content:center;
+      align-items:center;
+      color:rgba(255,255,255,0.5);
+    }
+  }//clock
+}
+#settings {
+  display:grid;
+  grid-template: repeat(3,1fr)/repeat(16, 1fr);//repeat(8, 1fr);
+  width: 100%;//24rem;
+  margin:auto;
+  height: 8rem;
+  text-align:center;
+  font-size:2rem;
+  & #workTitle {
+    grid-area: 1/1/4/4; 
+  }
+  & #workUp {
+    grid-area: 1/4/2/6;
+  }
+  & #workTime {
+    grid-area: 2/4/3/6;
+    color: $green;
+  }
+  & #workDown {
+    grid-area: 3/4/4/6;
+  }
+  & #breakTitle {
+    grid-area: 1/14/4/17;
+  }
+  & #breakUp {
+    grid-area: 1/12/2/14;
+  }
+  & #breakTime {
+    color: $red;
+    grid-area: 2/12/3/14;
+  }
+  & #breakDown {
+    grid-area: 3/12/4/14;
+  }
+  #breakDown:hover, #breakUp:hover, #workUp:hover, #workDown:hover {
+    cursor: pointer;
+  }
+  #filler {
+    grid-area: 1/6/4/12;
+    & span {
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size: 1.4rem;
+      border: white solid 1px;
+      border-radius: 100%;
+      height: 4.5rem;
+      width:4.5rem;
+      transition: all 0.5s ease;
+      &:hover{
+        background:white;
+        color: $dark-grey;
+        cursor: pointer;
+        font-weight:300;
+      }//reset btn hover
+    }//reset btn
+  }
+  & div {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+}
+
